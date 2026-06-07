@@ -1,0 +1,81 @@
+{
+  "theme_and_archetype": {
+    "domain": "News/Data/Trends/Game",
+    "theme": "LIGHT",
+    "archetype": "4 (Swiss & High-Contrast)",
+    "vibe": "Brutalist clarity, editorial magazine meets data terminal. Information-first layout."
+  },
+  "typography": {
+    "primary_heading_font": "Cabinet Grotesk",
+    "secondary_data_font": "IBM Plex Mono",
+    "body_font": "IBM Plex Sans",
+    "rules": [
+      "Headings use Cabinet Grotesk with tight letter spacing (tracking-tight or tracking-tighter).",
+      "Overlines, data labels, ticker text, and numbers MUST use IBM Plex Mono, uppercase, with wide spacing (tracking-[0.2em]).",
+      "Never use Inter or generic sans. Use Black/Bold for impact or Light for elegance."
+    ]
+  },
+  "colors": {
+    "background_base": "#FFFFFF",
+    "background_alt": "#F4F4F5",
+    "text_primary": "#0A0A0A",
+    "text_secondary": "#52525B",
+    "accent_red": "#FF3B30",
+    "accent_blue": "#007AFF",
+    "border_color": "rgba(10, 10, 10, 0.15)",
+    "rules": [
+      "Color is function. 95% of UI is monochrome.",
+      "Red is used for 'trending up', 'hot', alerts, or primary CTA.",
+      "Blue is used for links or secondary game actions."
+    ]
+  },
+  "layout_and_spacing": {
+    "strategy": "Grid Borders (The 'Technical' Look)",
+    "showcase_grid": "Mode A: The Tetris Grid. Asymmetric, massive typography, col-span-full for hero items. gap-8 to gap-12.",
+    "dashboard_grid": "Mode B: The Control Room Grid. Strict modular blocks, gap-0 with border-collapse, or gap-4 with sharp borders.",
+    "rules": [
+      "Expose the skeleton. The grid lines should be visible (1px borders).",
+      "Containers with borders must have internal padding (p-6 or p-8).",
+      "Optical alignment over geometrical."
+    ]
+  },
+  "surfaces_and_components": {
+    "general": "Neo-Brutalist/Swiss layout. Sharp edges (rounded-none), no soft shadows.",
+    "cards": "Flat solid background. 1px solid border. For hover states, use a hard shadow (e.g., shadow-[4px_4px_0px_#0A0A0A]) and -translate-y-1.",
+    "header": "Solid background with a hard bottom border. DO NOT use transparent headers. Sticky z-50.",
+    "marquee": "The 'Editorial Ribbon'. Monospaced font, pale background, border top and bottom, very slow drift.",
+    "charts": "Shadcn charts/Recharts. Monospaced axis labels. High contrast bars (e.g., all black with one accent red bar).",
+    "buttons": "Sharp rectangles. Inverted contrast on hover."
+  },
+  "image_urls": {
+    "hero_abstract": {
+      "url": "https://images.unsplash.com/photo-1655890006065-edefcd764af6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTV8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMHdpcmVmcmFtZSUyMGdsb2JlJTIwd2hpdGUlMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc4MDgxNTM4NXww&ixlib=rb-4.1.0&q=85",
+      "description": "Abstract white sphere/globe, useful as a subtle hero background or graphic element."
+    },
+    "trending_person": {
+      "url": "https://images.pexels.com/photos/17718209/pexels-photo-17718209.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Taylor Swift concert stadium shot for trending people/entertainment category."
+    },
+    "trending_tech": {
+      "url": "https://images.pexels.com/photos/30639091/pexels-photo-30639091.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Detailed shot of Apple iPhone for trending tech or affiliate product card."
+    },
+    "trending_place": {
+      "url": "https://images.pexels.com/photos/37126955/pexels-photo-37126955.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Tokyo city street neon evening for trending places/travel category."
+    },
+    "sponsor_logo_ad": {
+      "url": "https://images.pexels.com/photos/8176112/pexels-photo-8176112.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Nike logo on dark background, use as a sponsored trend card/ad slot placeholder."
+    }
+  },
+  "instructions_to_main_agent": [
+    "Build the UI focusing on a hybrid 'Editorial Magazine meets Data Terminal'.",
+    "Implement the 'Trending Now' ticker using react-fast-marquee as an Editorial Ribbon with IBM Plex Mono.",
+    "For the Dashboard, use strict grids (grid-cols-1 md:grid-cols-4) with 1px border dividers to mimic a control room.",
+    "For the Game Module ('Higher/Lower'), use a split screen layout with massive typography for the options, and distinct hover states (hard shadows).",
+    "Integrate Shadcn UI components for dropdowns/selects (country/category filters) but override styles to remove border-radius (rounded-none).",
+    "Monetization spots (newsletter, affiliate cards) should be styled consistently with the brutalist/editorial theme, looking like native data modules.",
+    "All interactive elements MUST have a data-testid attribute in kebab-case."
+  ]
+}
