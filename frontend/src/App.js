@@ -5,6 +5,10 @@ import HomePage from "@/pages/Home";
 import DashboardPage from "@/pages/DashboardPage";
 import GamePage from "@/pages/GamePage";
 
+// Stripe & AdSense env config
+const STRIPE_KEY = process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY || '';
+const ADSENSE_ID = process.env.REACT_APP_ADSENSE_CLIENT_ID || '';
+
 function App() {
   return (
     <div className="App">
