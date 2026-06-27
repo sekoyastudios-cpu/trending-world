@@ -25,10 +25,8 @@ const MODULES = [
 ];
 
 const PLANS = [
-  {key:'Free',price:'$0',period:'/mo',c:'#6B7280',f:['5 Scans/day','AI Business Builder','Basic Website Builder','Community']},
-  {key:'Starter',price:'$29',period:'/mo',c:'#00BFFF',f:['100 Scans/day','All AI Modules','Marketing Machine','Sales Machine','Priority Support']},
-  {key:'Pro',price:'$79',period:'/mo',c:'#00FF88',pop:true,f:['Unlimited Scans','AI Finance','Competitor Intel','AI Automation','AI Coach','Custom Domain']},
-  {key:'Enterprise',price:'Custom',period:'',c:'#FFD700',f:['Market Intelligence','Consumer Trends','Innovation Reports','Predictive Analytics','White Label']},
+  {key:'Free',price:'$0',period:'/mo',c:'#6B7280',f:['Unlimited Trend Browsing','Newsletter Access','Ad-supported','Community Access'],btn:'Start Free — It\'s Free'},
+  {key:'Premium',price:'$4.99',period:'/mo',c:'#00BCFF',pop:true,f:['Ad-Free Experience','Early Access to Trends','Priority Newsletter','Advanced Filters','Premium Support'],btn:'Go Premium (Optional)'}
 ];
 
 const gradText = {background:'linear-gradient(90deg,#00BFFF,#00FF88)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent'};
