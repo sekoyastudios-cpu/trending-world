@@ -21,7 +21,24 @@
         work correctly both with client-side routing and a non-root public URL.
         Learn how to configure a non-root public URL by running `npm run build`.
         -->
-        <title>Emergent | Fullstack App</title>
+        <title>The Search Atlas — What the world is searching for</title>
+        <!-- Google AdSense (auto-loads only when REACT_APP_ADSENSE_CLIENT is configured at runtime via AdSlot). -->
+        <script>
+          (function(){
+            try {
+              // Look up the AdSense client id from a meta tag the build can inject, or fall back silently.
+              var m = document.querySelector('meta[name="adsense-client"]');
+              var client = m && m.content && m.content !== '__ADSENSE_CLIENT__' ? m.content : null;
+              if (!client) return;
+              var s = document.createElement('script');
+              s.async = true;
+              s.crossOrigin = 'anonymous';
+              s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + encodeURIComponent(client);
+              document.head.appendChild(s);
+            } catch (_) {}
+          })();
+        </script>
+        <meta name="adsense-client" content="__ADSENSE_CLIENT__" />
         <script>window.addEventListener("error",function(e){if(e.error instanceof DOMException&&e.error.name==="DataCloneError"&&e.message&&e.message.includes("PerformanceServerTiming")){e.stopImmediatePropagation();e.preventDefault()}},true);</script>
         <script src="https://assets.emergent.sh/scripts/emergent-main.js"></script>
     </head>

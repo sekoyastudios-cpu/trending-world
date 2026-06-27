@@ -6,6 +6,12 @@ export const Affiliates = () => {
   useEffect(() => {
     api.get("/affiliates").then((r) => setItems(r.data)).catch(() => {});
   }, []);
+
+  const handleClick = (id) => {
+    // fire-and-forget — never block the navigation
+    api.post("/affiliates/click", { affiliate_id: id }).catch(() => {});
+  };
+
   return (
     <section data-testid="affiliates-section" className="border-b border-black">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10 py-12">
@@ -24,7 +30,8 @@ export const Affiliates = () => {
               key={a.id}
               href={a.url}
               target="_blank"
-              rel="noreferrer"
+              rel="noreferrer noopener sponsored"
+              onClick={() => handleClick(a.id)}
               data-testid={`affiliate-card-${a.id}`}
               className="block border-r border-b border-black p-5 hover:bg-[#fafafa] transition-colors"
             >

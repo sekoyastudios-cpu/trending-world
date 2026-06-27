@@ -377,6 +377,31 @@ async def sponsored_slot():
     }
 
 
+class AffiliateClick(BaseModel):
+    affiliate_id: str
+
+
+@api_router.post("/affiliates/click")
+async def affiliate_click(payload: AffiliateClick):
+    doc = {
+        "id": str(uuid.uuid4()),
+        "affiliate_id": payload.affiliate_id,
+        "clicked_at": datetime.now(timezone.utc).isoformat(),
+    }
+    await db.affiliate_clicks.insert_one(doc)
+    return {"ok": True}
+
+
+@api_router.get("/affiliates/stats")
+async def affiliate_stats():
+    pipeline = [
+        {"$group": {"_id": "$affiliate_id", "clicks": {"$sum": 1}}},
+        {"$sort": {"clicks": -1}},
+    ]
+    cursor = db.affiliate_clicks.aggregate(pipeline)
+    return [{"affiliate_id": d["_id"], "clicks": d["clicks"]} async for d in cursor]
+
+
 @api_router.get("/affiliates")
 async def affiliates():
     return [

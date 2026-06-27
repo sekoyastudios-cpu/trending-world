@@ -3,6 +3,7 @@ import Ticker from "@/components/site/Ticker";
 import Game from "@/components/site/Game";
 import Newsletter from "@/components/site/Newsletter";
 import Footer from "@/components/site/Footer";
+import AdSlot from "@/components/site/AdSlot";
 
 export default function GamePage() {
   return (
@@ -10,6 +11,7 @@ export default function GamePage() {
       <Header />
       <Ticker />
       <Game />
+      <AdSlot slot={process.env.REACT_APP_ADSENSE_SLOT_GAME} variant="banner" label="AD · Game" testId="ad-slot-game" />
       <Newsletter />
       <Footer />
     </div>
